@@ -29,7 +29,7 @@ const PostDetails = () => {
     const body = e.target.body.value;
     const updatedPost = { id, title, body };
     updatePost(updatedPost);
-    console.log(responseInfo);
+    navigate('/');
   };
 
   return (

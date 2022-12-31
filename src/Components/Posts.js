@@ -52,7 +52,7 @@ const Posts = () => {
               <p>
                 {post?.body?.length > 50
                   ? post?.body?.slice(0, 50) + "..."
-                  : post.body}
+                  : post?.body}
               </p>
               <div className="card-actions justify-end">
                 <Link to={`/postDetails/${post?.id}`}>
