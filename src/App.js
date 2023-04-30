@@ -2,16 +2,22 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import PostDetails from "./Components/PostDetails";
 import Posts from "./Components/Posts";
+import Redux from "./Components/CounterComponent";
+import CounterComponent from "./Components/CounterComponent";
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Posts></Posts>,
+      element: <Posts />,
     },
     {
       path: "/postDetails/:id",
-      element: <PostDetails></PostDetails>,
+      element: <PostDetails />,
+    },
+    {
+      path: "/redux",
+      element: <CounterComponent />,
     },
   ]);
 

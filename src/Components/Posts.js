@@ -1,8 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { useGetAllPostsQuery, useAddPostMutation } from "../postsApi";
+import { Link, useNavigate } from "react-router-dom";
+import { useGetAllPostsQuery, useAddPostMutation } from "../services/postsApi";
 
 const Posts = () => {
+  const nevigate = useNavigate();
   const { data, isLoading } = useGetAllPostsQuery();
   const [addPost] = useAddPostMutation();
 
@@ -20,6 +21,7 @@ const Posts = () => {
 
   return (
     <div>
+      <button onClick={() => nevigate('/redux')} className="absolute top-5 right-5 btn-warning px-5 py-2 rounded-md text-white font-semibold">Redux Demo</button>
       <form onSubmit={handleAddPost} className="my-10  max-w-lg mx-auto">
         <input
           type="text"

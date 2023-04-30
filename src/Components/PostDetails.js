@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useGetPostByIdQuery, useDeletePostMutation, useUpdatePostMutation} from "../postsApi";
+import { useGetPostByIdQuery, useDeletePostMutation, useUpdatePostMutation} from "../services/postsApi";
 
 const PostDetails = () => {
   const id = document.URL.split("postDetails/")[1];

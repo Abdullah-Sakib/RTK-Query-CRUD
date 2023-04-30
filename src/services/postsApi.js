@@ -7,6 +7,7 @@ export const postsApi = createApi({
     baseUrl: "http://localhost:5000/",
   }),
   endpoints: (builder) => ({
+
     getAllPosts: builder.query({
       query: () => ({
         url: "/posts",
@@ -29,7 +30,7 @@ export const postsApi = createApi({
         method: "POST",
         body,
       }),
-      invalidatesTags: ["allPosts"],
+      invalidatesTags: ["allPosts"], // automatic data fetch
     }),
 
     deletePost: builder.mutation({
@@ -44,12 +45,10 @@ export const postsApi = createApi({
       query: (body) => ({
         url: `/posts/${body.id}`,
         method: "PUT",
-        body: body
+        body: body,
       }),
       invalidatesTags: ["allPosts", "postDetails"],
     }),
-
-
   }),
 });
 
